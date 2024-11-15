@@ -13,6 +13,8 @@ the data-structure surefire results is converted to.
 
 ## Usage
 
+Add module by `go get github.com/adobe/go-surefire`.
+
 Read test-result XML files from `~/test-results` directory.
 
 ```

@@ -1,4 +1,4 @@
-module adobe/go-surefire
+module github.com/adobe/go-surefire
 
 go 1.21.0
 

@@ -1,0 +1,24 @@
+name: Build PR
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+
+jobs:
+  build:
+    name: test-go-surefire
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+      - name: Build PR
+        uses: actions/setup-go@v5
+        with:
+          go-version: '^1.21.0' # The Go version to download (if necessary) and use.
+      - run: |
+          go clean -i ./...
+          go get -v ./...
+          go test -v ./...
+          go build -v ./...
